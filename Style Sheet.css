@@ -19,12 +19,12 @@ body {
     font-size: large;
     background-color: white;
     width: fit-content;
-    height: 30px;
+    height: fit-content;
     display: inline-block;
-    margin-top: 50px;
+    margin: 50px 10px 0px 10px;
     padding: 10px 10px 10px 10px;
 }
 
 .index-main {
-    /* Add Background image*/
+    /* Add Background Image */
 }

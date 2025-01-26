@@ -6,6 +6,8 @@
 body {
     background-color: white;
     font-family: Helvetica;
+    overflow: scroll;
+    text-align: center;
 }
 
 .links-header {
@@ -23,4 +25,18 @@ body {
     display: inline-block;
     margin: 50px 10px 0px 10px;
     padding: 10px 10px 10px 10px;
+}
+
+.index-section {
+    margin: 40px 10px 10px 10px;
+    background-color: blue;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+}
+
+.site-footer {
+    background-color: blue;
+    width: auto;
+    height: 150px;
 }

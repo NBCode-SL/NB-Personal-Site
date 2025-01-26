@@ -39,4 +39,5 @@ body {
     background-color: blue;
     width: auto;
     height: 150px;
+    position: relative;
 }

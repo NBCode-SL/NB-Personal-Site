@@ -29,15 +29,18 @@ body {
 
 .index-section {
     margin: 40px 10px 10px 10px;
-    background-color: blue;
+    background-color: white;
     display: inline-block;
     width: 400px;
     height: 500px;
+    font-family: sans-serif;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: black;
 }
 
 .site-footer {
     background-color: blue;
     width: auto;
     height: 150px;
-    position: relative;
 }

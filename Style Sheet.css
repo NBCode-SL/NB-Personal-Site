@@ -15,8 +15,8 @@ body {
     height: 200px;
 }
 
-.links-header li {
-    border-radius: 20%;
+.links-header button {
+    font-size: large;
     background-color: white;
     width: fit-content;
     height: 30px;

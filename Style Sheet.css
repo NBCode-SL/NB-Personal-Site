@@ -68,3 +68,8 @@ body {
     font-size: xx-large;
     font-family: monospace;
 }
+
+#resume {
+    width: auto;
+    height: auto;
+}

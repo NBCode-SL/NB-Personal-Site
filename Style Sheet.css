@@ -62,3 +62,9 @@ body {
     border-radius: 5%;
     border-color: black;
 }
+
+
+#index-section  p {
+    font-size: xx-large;
+    font-family: monospace;
+}

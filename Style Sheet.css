@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 body {
     background-color: white;
     font-family: Helvetica;
@@ -10,12 +11,14 @@ body {
     text-align: center;
 }
 
+
 .links-header {
     background-color: black;
     text-align: center;
     width: auto;
     height: 200px;
 }
+
 
 .links-header button {
     font-size: large;
@@ -26,6 +29,7 @@ body {
     margin: 50px 10px 0px 10px;
     padding: 10px 10px 10px 10px;
 }
+
 
 #index-section {
     margin: 40px 10px 10px 10px;
@@ -39,11 +43,13 @@ body {
     border-color: black;
 }
 
+
 .site-footer {
     background-color: blue;
     width: auto;
     height: 150px;
 }
+
 
 #contacts-div {
     margin: 40px 10px 10px 10px;
@@ -55,9 +61,4 @@ body {
     border-style: solid;
     border-radius: 5%;
     border-color: black;
-}
-
-#index-section p {
-    font-family: monospace;
-    font-size: xx-large;
 }

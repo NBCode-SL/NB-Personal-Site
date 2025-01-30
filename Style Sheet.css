@@ -1,3 +1,5 @@
+/* Site Wide */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +13,13 @@ body {
     text-align: center;
 }
 
+/* General Class */
 
 .links-header {
     background-color: black;
     text-align: center;
     width: auto;
-    height: 200px;
+    height: 100px;
 }
 
 
@@ -24,12 +27,19 @@ body {
     font-size: large;
     background-color: white;
     width: fit-content;
-    height: fit-content;
+    height: 50px;
     display: inline-block;
-    margin: 50px 10px 0px 10px;
+    margin: 25px 30px 25px 30px;
     padding: 10px 10px 10px 10px;
 }
 
+.site-footer {
+    background-color: blue;
+    width: auto;
+    height: 150px;
+}
+
+/* Page Specific - index.html */
 
 .index-section {
     margin: 40px 10px 10px 10px;
@@ -43,13 +53,20 @@ body {
     border-color: black;
 }
 
-
-.site-footer {
-    background-color: blue;
-    width: auto;
-    height: 150px;
+.index-section p {
+    font-size: x-large;
+    font-family: monospace;
 }
 
+#headshot {
+    border-style: solid;
+    border-radius: 5%;
+    border-color: black;
+    height: 250px;
+    width:  200px;
+}
+
+/* Page Specific - Ccontacts.html */
 
 #contacts-div {
     margin: 40px 10px 10px 10px;
@@ -63,22 +80,17 @@ body {
     border-color: black;
 }
 
-
-.index-section p {
-    font-size: x-large;
-    font-family: monospace;
-}
+/* Page Specific - Resume.html */
 
 #resume {
     width: 1000px;
     height: 1000px;
     z-index: 10;
+    border:10px solid black;
 }
 
-#headshot {
-    border-style: solid;
-    border-radius: 5%;
+#resume-refrences {
+    border-style: dashed;
     border-color: black;
-    height: 250px;
-    width:  200px;
+    margin-top: 100px;
 }

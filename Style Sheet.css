@@ -31,8 +31,7 @@ body {
 }
 
 
-#index-section-one,
-#index-section-two {
+.index-section {
     margin: 40px 10px 10px 10px;
     background-color: white;
     display: inline-block;
@@ -65,7 +64,7 @@ body {
 }
 
 
-#index-section-two p {
+.index-section p {
     font-size: x-large;
     font-family: monospace;
 }

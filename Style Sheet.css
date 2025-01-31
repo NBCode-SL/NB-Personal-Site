@@ -37,6 +37,7 @@ body {
     background-color: blue;
     width: auto;
     height: 150px;
+    bottom: auto;
 }
 
 /* Page Specific - index.html */
@@ -63,13 +64,14 @@ body {
     border-radius: 5%;
     border-color: black;
     height: 250px;
-    width:  200px;
+    width: 200px;
 }
 
 /* Page Specific - Ccontacts.html */
 
 #contacts-div {
     margin: 40px 10px 10px 10px;
+    padding: 30px 10px;
     background-color: white;
     display: inline-block;
     width: 600px;
@@ -86,11 +88,13 @@ body {
     width: 1000px;
     height: 1000px;
     z-index: 10;
-    border:10px solid black;
+    border: 10px solid black;
 }
 
 #resume-refrences {
     border-style: dashed;
     border-color: black;
-    margin-top: 100px;
+    margin: 100px auto;
+    width: 90%;
+    height: fit-content;
 }

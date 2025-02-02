@@ -100,3 +100,14 @@ body {
     z-index: 10;
     border: 10px solid black;
 }
+
+#code-bytes {
+    margin:50px auto;
+}
+
+#python-byte {
+    margin: 100px auto;
+    width: 600px;
+    height: 500px;
+    border: 2px solid black
+}

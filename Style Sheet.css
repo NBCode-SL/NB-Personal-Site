@@ -34,12 +34,22 @@ body {
 }
 
 .site-footer {
-    background-color: blue;
+    background-color: black;
+    color: white;
     width: auto;
     height: 150px;
     bottom: auto;
 }
 
+.site-footer p {
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 10px
+}
+
+.site-footer li {
+    font-size: 10px;
+}
 /* Page Specific - index.html */
 
 .index-section {
@@ -70,7 +80,7 @@ body {
 /* Page Specific - Ccontacts.html */
 
 #contacts-div {
-    margin: 40px 10px 10px 10px;
+    margin: 100px 10px 100px 10px;
     padding: 30px 10px;
     background-color: white;
     display: inline-block;
@@ -86,7 +96,7 @@ body {
 
 #resume {
     width: 1000px;
-    height: 1000px;
+    height: 2585px;
     z-index: 10;
     border: 10px solid black;
 }

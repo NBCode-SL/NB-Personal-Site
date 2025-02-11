@@ -32,6 +32,9 @@ body {
     margin: 25px 30px 25px 30px;
     padding: 10px 10px 10px 10px;
 }
+    .links-header button:hover {
+        color: red
+    }
 
 .site-footer {
     background-color: black;
@@ -51,7 +54,6 @@ body {
     font-size: 10px;
 }
 /* Page Specific - index.html */
-
 .index-section {
     margin: 40px 10px 10px 10px;
     background-color: white;

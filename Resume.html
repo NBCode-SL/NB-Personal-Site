@@ -22,35 +22,267 @@
     <main id="resume-main">
 
         <embed id="resume" class="pdf" src="./Noah Resume.pdf">
-        
+
         <section id="code-bytes">
             <h1>Code-Bytes</h1>
             <div id="python-byte">
                 <h2>Python:</h2>
+                <!--
+                    import math
+
+                    def calc_menu():
+                        """A Function that return a number between 1-6 which correspond to if statements in calc_operation()"""
+                        print()
+                        print("Calculator Application:")
+                        print()
+                        menu_choice = input('Menu: \n1. Arithmetic\n2. Exponent\n3. Root\n4. Degree and Radian Conversion\n5.Trigonometry\n6. Exit \nChoose: ')
+
+                        if menu_choice == "1":
+                            return 1
+                        # Exponent Function
+                        elif menu_choice == "2":
+                            return 2
+                        # Root Function
+                        elif menu_choice == "3":
+                            return 3
+                        # Degree and Radian Conversion Function
+                        elif menu_choice == "4":
+                            return 4
+                        # Trigonometry Function
+                        elif menu_choice == "5":
+                            return 5
+                        #Exit
+                        elif menu_choice == "6":
+                            return 6
+                        # Invalid input While loop
+                        while menu_choice != "1" or menu_choice != "2" or menu_choice != "3" or menu_choice != "4" or menu_choice != "5" or menu_choice != "6":
+                            print("Invalid input, you must type a number corresponding to a function")
+                            menu_choice = input('Menu: \n1. Arithmetic\n2. Exponent\n3. Root\n4. Degree and Radian Conversion\n5.Trigonometry\n6. Exit \nChoose: ')
+                            if menu_choice == "1":
+                                return 1
+                            elif menu_choice == "2":
+                                return 2
+                            elif menu_choice == "3":
+                                return 3
+                            elif menu_choice == "4":
+                                return 4
+                            elif menu_choice == "5":
+                                return 5
+                            elif menu_choice == "6":
+                                return 6
+
+
+                    def Arithmetic():
+                        """A functiond deticated to basic arithmetic operations I.E Plus/Minus/Multiplication/Division"""
+                        try:
+                            num_one = float(input('Enter your first number: '))
+                            operation = input('+ , - , *, / , % ')
+                            num_two = float(input('Enter your second number:'))
+                            # Addition
+                            if operation == "+":
+                                return num_one + num_two
+                            # Subraction
+                            elif operation == "-":
+                                return num_one - num_two
+                            # Multiplication
+                            elif operation == "*":
+                                return num_one * num_two
+                            # Division
+                            elif operation == "/":
+                                return num_one / num_two
+                            # Modulus
+                            elif operation == "%":
+                                return num_one % num_two
+                            # Invalid Input
+                            else:
+                                while operation != "+" or operation != "-" or operation != "*" or operation != "/" or operation != "%":
+                                    print('Invalid Input')
+                                    try:
+                                        num_one = float(input('Enter your first number: '))
+                                        operation = input('+ , - , *, / , % ')
+                                        num_two = float(input('Enter your second number:'))
+                                        # Addition
+                                        if operation == "+":
+                                            return num_one + num_two
+                                        # Subraction
+                                        elif operation == "-":
+                                            return num_one - num_two
+                                        # Multiplication
+                                        elif operation == "*":
+                                            return num_one * num_two
+                                        # Division
+                                        elif operation == "/":
+                                            return num_one / num_two
+                                        # Modulus
+                                        elif operation == "%":
+                                            return num_one % num_two
+                                        # Invalid Division Operation Handle (x/0) were x = All Real Numbers
+                                    except:
+                                    return "Invalid Input - Undefined Result"
+                        # Invalid Division Operation Handle (x/0) were x = All Real Numbers
+                        except:
+                        return "Invalid Input - Undefined Result"
+
+
+                    def Exponent():
+                        """A function deticated to exponenting a number x I.E X^Y-power"""
+                        try:
+                            num_one = float(input("Enter your number: "))
+                            power = float("Enter the power: ")
+                            # Returns a number to the power of the power var
+                            return num_one ** power
+                        except: 
+                            return "Invalid"
+
+
+                    def Root():
+                        """A function deticated to rooting a number x I.E X^1/z-power"""
+                        try:
+                            num_one = float(input('Enter your number: '))
+                            root = 1 / (float(input('Enter your root: ')))
+                            return num_one ** root
+                        except:
+                            return "Invalid"
+
+
+                    def Degree_Radian_conversion():
+                        """A fuction deticated to the coversion of degrees(x) to radians I.E x *π/180 , and Radians(x) to degrees I.E x*180/π """
+                        Degree_or_radian = input("1.Degree to Radian\n2. Radian to Degree\nChoose: ")
+                        if Degree_or_radian == '1':
+                            Degree = float(input('Enter Degree: '))
+                            return Degree * (math.pi / 180)
+                        elif Degree_or_radian == '2':
+                            Radian = float(input('Enter Radian: '))
+                            # Returns a value after being pluggeed into the Radian -> Degree conversion formula
+                            return Radian * (180/math.pi)
+                        else:
+                            # While loop handling Invalid Input
+                            while Degree_or_radian != "1" or Degree_or_radian != "2":
+                                print('Invalid Input')
+                                Degree_or_radian = input("1.Degree to Radian\n2. Radian to Degree\nChoose: ")
+                                if Degree_or_radian == '1':
+                                    Degree = float(input('Enter Degree: '))
+                                    return Degree * (math.pi / 180)
+                                elif Degree_or_radian == '2':
+                                    Radian = float(input('Enter Radian: '))
+                                    return Radian * (180/math.pi)
+
+
+                    def Trigonometry():
+                        """A function deticated to Trig functions I.E Sin/Cos/Tan/Csc/Sec/Cot"""
+                        try:
+                            trig_operation = input('1. Sin\n2. Cos\n3. Tan\n4. Csc\n5. Sec\n6. Cot\nChoose: ')
+                            if trig_operation == "1":
+                                num = float(input('Enter Your Number: '))
+                                # Returns a value using the python math import to find the sin of a num
+                                return math.sin(num)
+                            elif trig_operation == "2":
+                                num = float(input('Enter Your Number: '))
+                                # Returns a value using the python math import to find the cos of a num
+                                return math.cos(num)
+                            elif trig_operation == "3":
+                                num = float(input('Enter Your Number: '))
+                                # Returns a value using the python math import to find the tan of a num
+                                return math.tan(num)
+                            elif trig_operation == "4":
+                                num = float(input('Enter Your Number: '))
+                                # Returns a value using the python math import to find the sin of a num over 1 to find the Cosecant of a number
+                                return 1/math.sin(num)
+                            elif trig_operation == "5":
+                                # Returns a value using the python math import to find the cos of a num over 1 to find Secant of anumber
+                                num = float(input('Enter Your Number: '))
+                                return 1/math.cos(num)
+                            elif trig_operation == "6":
+                                num = float(input('Enter Your Number: '))
+                                # Returns a value using the python math import to find the tam of a num over 1 to find the Cotangent
+                                of a number
+                                return 1/math.tan(num)
+                            else:
+                                # Invalid Input while loop
+                                while trig_operation != "1" or trig_operation != "2" or trig_operation != "3" or trig_operation != "4" or trig_operation != "5" or trig_operation != "6":
+                                    print("Invalid Input")
+                                    try:
+                                    trig_operation = input(
+                                    '1. Sin\n2. Cos\n3. Tan\n4. Csc\n5. Sec\n6. Cot\nChoose: ')
+                                    if trig_operation == "1":
+                                    num = float(input('Enter Your Number: '))
+                                    return math.sin(num)
+                                    elif trig_operation == "2":
+                                    num = float(input('Enter Your Number: '))
+                                    return math.cos(num)
+                                    elif trig_operation == "3":
+                                    num = float(input('Enter Your Number: '))
+                                    return math.tan(num)
+                                    elif trig_operation == "4":
+                                    num = float(input('Enter Your Number: '))
+                                    return 1/math.sin(num)
+                                    elif trig_operation == "5":
+                                    num = float(input('Enter Your Number: '))
+                                    return 1/math.cos(num)
+                                    elif trig_operation == "6":
+                                    num = float(input('Enter Your Number: '))
+                                    return 1/math.tan(num)
+                                    except:
+                                    return "Invalid Input - Trig_func Answer is undefined"
+                        except:
+                             return "Invalid Input - Trig_func Answer is undefined"
+
+
+                    def calc_operation():
+                        """A function containing if and a while statement(s) controling how the calc_menu acesses different
+                        things """
+                        x = True
+                        while x is True:
+                            menu = calc_menu()
+                            if menu == 1:
+                                print()
+                                print(Arithmetic())
+                            elif menu == 2:
+                                print()
+                                print(Exponent())
+                            elif menu == 3:
+                                print()
+                                print(Root())
+                            elif menu == 4:
+                                print()
+                                print(Degree_Radian_conversion())
+                            elif menu == 5:
+                                print()
+                                print(Trigonometry())
+                            elif menu == 6:
+                                x = False
+                        print('Bye Bye')
+
+                    calc_operation()
+
+            -->
+
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>All data including but not limited to Personal, Professional, and Code 
+        <p>All data including but not limited to Personal, Professional, and Code
             is the personal and Intelectual property of the sites owner and domain holder.
             <br>
             <br>
-            Any unotherized use of this information that is deemed threating 
-            to the personal or profesional saftey of site/domain holder will be condemed and prosocuted to the extent that the law allows. 
+            Any unotherized use of this information that is deemed threating
+            to the personal or profesional saftey of site/domain holder will be condemed and prosocuted to the extent
+            that the law allows.
             <br>
             <br>
-        <em>
+            <em>
                 By viewing this site you agree to the following terms:
                 <br>
                 <br>
+            </em>
         </p>
-                <ul class="terms"> 
-                    <li>Do not share or edit any data unless given express permision</li>
-                    <li>Do not copy any data unless given express permision</li>
-                    <li>All contact data listed is monitered 24/7 any misuse of said data will be investigated and prosecuted if deemed necessary. </li>
-                </ul> 
-        </em>
+        <ul class="terms">
+            <li>Do not share or edit any data unless given express permision</li>
+            <li>Do not copy any data unless given express permision</li>
+            <li>All contact data listed is monitered 24/7 any misuse of said data will be investigated and prosecuted if
+                deemed necessary. </li>
+        </ul>
     </footer>
 
 </body>

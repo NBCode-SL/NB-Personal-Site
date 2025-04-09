@@ -108,8 +108,13 @@ body {
 }
 
 #python-byte {
-    margin: 100px auto;
-    width: 600px;
-    height: 500px;
-    border: 2px solid black
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid black;
+    text-align: justify;
+}
+
+#python-byte h2 {
+    text-align: center;
 }

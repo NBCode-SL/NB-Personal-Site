@@ -1,0 +1,307 @@
+<style>.hljs-addition{color:#82AAFF;}.hljs-selector-id{color:#C3E88C;}.hljs-selector-attr{color:#82AAFF;}.hljs-meta-keyword{color:#FFCA6B;}.hljs-section{color:#71F1FB;font-weight:bold;}.hljs-literal{color:#82AAFF;}.hljs-title{color:#71F1FB;font-weight:bold;}.hljs-type{color:#FFCA6B;}.hljs-keyword{color:#C691E9;}.hljs-variable{color:#82AAFF;}.hljs-bullet{color:#82AAFF;}.hljs-template-tag{color:#C3E88C;}.hljs-doctag{color:#C691E9;}.hljs-symbol{color:#82AAFF;}.hljs-strong{font-weight:bold;}.hljs-deletion{color:#C3E88C;}.hljs-subst{color:#BFBBCD;}.hljs-selector-tag{color:#C691E9;}.hljs-link{color:#82AAFF;}.hljs-selector-pseudo{color:#82AAFF;}.hljs-emphasis{font-style:italic;}.hljs-regexp{color:#82AAFF;}.hljs-quote{color:#C3E88C;}.hljs{color:#BFBBCD;overflow-x:auto;padding:0.5em;display:block;}.hljs-function{color:#82AAFF;}.hljs-comment{color:#464B5D;}.hljs-template-variable{color:#82AAFF;}.hljs-name{color:#C691E9;}.hljs-built_in{color:#82AAFF;}.hljs-attr{color:#C691E9;}.hljs-number{color:#FF9CAC;}.hljs-attribute{color:#82AAFF;}.hljs-meta{color:#C691E9;}.hljs-string{color:#C3E88C;}.hljs-selector-class{color:#C3E88C;}.hljs-code{color:#82AAFF;}</style><pre><code class="hljs" style="background:#0F111A;border-radius:8px"><span class="hljs-string">"""Application that runs calculator functions"""</span>
+<span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial
+<span class="hljs-comment"># Imports GUI Programs</span>
+<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> messagebox 
+<span class="hljs-comment"># Imports Numpy - Similar to math</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-comment"># import matplotlib as plt to graph functions</span>
+<span class="hljs-keyword">import</span> matplotlib.<span class="hljs-attribute">pyplot</span> <span class="hljs-keyword">as</span> plt
+<span class="hljs-comment"># WILL NOT WORK UNTIL MATPLOTLIB is installed</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">arithmetic</span>():</span>
+    <span class="hljs-string">"""A functiond dedicated to basic arithmetic operations I.E Plus/Minus/Multiplication/Division"""</span>
+    <span class="hljs-keyword">try</span>:
+        num_one =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your first number: '</span>))
+        operation =<span class="hljs-attribute"> input</span>(<span class="hljs-string">'+ , - , *, / , % '</span>)
+        num_two =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your second number:'</span>))
+        <span class="hljs-comment"># Addition</span>
+        <span class="hljs-keyword">if</span> operation == <span class="hljs-string">"+"</span>:
+            <span class="hljs-keyword">return</span> num_one + num_two
+        <span class="hljs-comment"># Subraction</span>
+        <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"-"</span>:
+            <span class="hljs-keyword">return</span> num_one - num_two
+        <span class="hljs-comment"># Multiplication</span>
+        <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"*"</span>:
+            <span class="hljs-keyword">return</span> num_one * num_two
+        <span class="hljs-comment"># Division</span>
+        <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"/"</span>:
+            <span class="hljs-keyword">return</span> num_one / num_two
+        <span class="hljs-comment"># Modulus</span>
+        <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"%"</span>:
+            <span class="hljs-keyword">return</span> num_one % num_two
+        <span class="hljs-comment"># Invalid Input</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">while</span> operation != <span class="hljs-string">"+"</span> <span class="hljs-keyword">or</span> operation != <span class="hljs-string">"-"</span> <span class="hljs-keyword">or</span> operation != <span class="hljs-string">"*"</span> <span class="hljs-keyword">or</span> operation != <span class="hljs-string">"/"</span> <span class="hljs-keyword">or</span> operation != <span class="hljs-string">"%"</span>:
+               <span class="hljs-attribute"> print</span>(<span class="hljs-string">'Invalid Input'</span>)
+                <span class="hljs-keyword">try</span>:
+                    num_one =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your first number: '</span>))
+                    operation =<span class="hljs-attribute"> input</span>(<span class="hljs-string">'+ , - , *, / , % '</span>)
+                    num_two =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your second number:'</span>))
+                    <span class="hljs-comment"># Addition</span>
+                    <span class="hljs-keyword">if</span> operation == <span class="hljs-string">"+"</span>:
+                        <span class="hljs-keyword">return</span> num_one + num_two
+                    <span class="hljs-comment"># Subraction</span>
+                    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"-"</span>:
+                        <span class="hljs-keyword">return</span> num_one - num_two
+                    <span class="hljs-comment"># Multiplication</span>
+                    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"*"</span>:
+                        <span class="hljs-keyword">return</span> num_one * num_two
+                    <span class="hljs-comment"># Division</span>
+                    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"/"</span>:
+                        <span class="hljs-keyword">return</span> num_one / num_two
+                    <span class="hljs-comment"># Modulus</span>
+                    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"%"</span>:
+                        <span class="hljs-keyword">return</span> num_one % num_two
+                 <span class="hljs-comment"># Invalid Division Operation Handle (x/0) were x = All Real Numbers</span>
+                <span class="hljs-keyword">except</span>:
+                    <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid Input - Undefined Result"</span>
+    <span class="hljs-comment"># Invalid Division Operation Handle (x/0) were x = All Real Numbers</span>
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid Input - Undefined Result"</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exponent</span>():</span>
+    <span class="hljs-string">"""A function dedicated to exponenting a number x I.E X^Y-power"""</span>
+    <span class="hljs-keyword">try</span>:
+        num_one =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">"Enter your number: "</span>))
+        power =<span class="hljs-attribute"> float</span>(<span class="hljs-string">"Enter the power: "</span>)
+        <span class="hljs-comment"># Returns a number to the power of the power var</span>
+        <span class="hljs-keyword">return</span> num_one ** power
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid"</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">root_num</span>():</span>
+    <span class="hljs-string">"""A function dedicated to rooting a number x I.E X^1/z-power"""</span>
+    <span class="hljs-keyword">try</span>:
+        num_one =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your number: '</span>))
+        root = <span class="hljs-number">1</span> / (float(input(<span class="hljs-string">'Enter your root: '</span>)))
+        <span class="hljs-keyword">return</span> num_one ** root
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid"</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">degree_radian_conversion</span>():</span>
+    <span class="hljs-string">"""A fuction dedicated to the coversion of degrees(x) to radians I.E x *π/180 , and Radians(x) to degrees I.E x*180/π """</span>
+    degree_or_radian =<span class="hljs-attribute"> input</span>(
+        <span class="hljs-string">"1.Degree to Radian\n2. Radian to Degree\nChoose: "</span>)
+    <span class="hljs-keyword">if</span> degree_or_radian == <span class="hljs-string">'1'</span>:
+        degree =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Degree: '</span>))
+        <span class="hljs-keyword">return</span> degree * (math.<span class="hljs-attribute">pi</span> / <span class="hljs-number">180</span>)
+    <span class="hljs-keyword">elif</span> degree_or_radian == <span class="hljs-string">'2'</span>:
+        radian =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Radian: '</span>))
+        <span class="hljs-comment"># Returns a value after being pluggeed into the Radian -&gt; Degree conversion formula</span>
+        <span class="hljs-keyword">return</span> radian * (<span class="hljs-number">180</span>/math.<span class="hljs-attribute">pi</span>)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-comment"># While loop handling Invalid Input</span>
+        <span class="hljs-keyword">while</span> degree_or_radian != <span class="hljs-string">"1"</span> <span class="hljs-keyword">or</span> degree_or_radian != <span class="hljs-string">"2"</span>:
+           <span class="hljs-attribute"> print</span>(<span class="hljs-string">'Invalid Input'</span>)
+            degree_or_radian =<span class="hljs-attribute"> input</span>(
+                <span class="hljs-string">"1.Degree to Radian\n2. Radian to Degree\nChoose: "</span>)
+            <span class="hljs-keyword">if</span> degree_or_radian == <span class="hljs-string">'1'</span>:
+                degree =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Degree: '</span>))
+                <span class="hljs-keyword">return</span> degree * (math.<span class="hljs-attribute">pi</span> / <span class="hljs-number">180</span>)
+            <span class="hljs-keyword">elif</span> degree_or_radian == <span class="hljs-string">'2'</span>:
+                radian =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Radian: '</span>))
+                <span class="hljs-keyword">return</span> radian * (<span class="hljs-number">180</span>/math.<span class="hljs-attribute">pi</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trigonometry</span>():</span>
+    <span class="hljs-string">"""A function dedicated to Trig functions I.E Sin/Cos/Tan/Csc/Sec/Cot"""</span>
+    <span class="hljs-keyword">try</span>:
+       <span class="hljs-attribute"> print</span>(<span class="hljs-string">'Answer is in Radians'</span>)
+        trig_operation =<span class="hljs-attribute"> input</span>(
+            <span class="hljs-string">'1. Sin\n2. Cos\n3. Tan\n4. Csc\n5. Sec\n6. Cot\nChoose: '</span>)
+        <span class="hljs-keyword">if</span> trig_operation == <span class="hljs-string">"1"</span>:
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-comment"># Returns a value using the python math import to find the sin of a num</span>
+            <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">sin</span>(num)
+        <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"2"</span>:
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-comment"># Returns a value using the python math import to find the cos of a num</span>
+            <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">cos</span>(num)
+        <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"3"</span>:
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-comment"># Returns a value using the python math import to find the tan of a num</span>
+            <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">tan</span>(num)
+        <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"4"</span>:
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-comment"># Returns a value using the python math import to find the sin of a num over 1 to find the Cosecant of a number</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">sin</span>(num)
+        <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"5"</span>:
+            <span class="hljs-comment"># Returns a value using the python math import to find the cos of a num over 1 to find Secant of a number</span>
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">cos</span>(num)
+        <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"6"</span>:
+            num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+            <span class="hljs-comment"># Returns a value using the python math import to find the tam of a num over 1 to find the Cotangent of a number</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">tan</span>(num)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># Invalid Input while loop</span>
+            <span class="hljs-keyword">while</span> trig_operation != <span class="hljs-string">"1"</span> <span class="hljs-keyword">or</span> trig_operation != <span class="hljs-string">"2"</span> <span class="hljs-keyword">or</span> trig_operation != <span class="hljs-string">"4"</span> <span class="hljs-keyword">or</span> trig_operation != <span class="hljs-string">"5"</span> <span class="hljs-keyword">or</span> trig_operation != <span class="hljs-string">"6"</span>:
+               <span class="hljs-attribute"> print</span>(<span class="hljs-string">"Invalid Input"</span>)
+                <span class="hljs-keyword">try</span>:
+                    trig_operation =<span class="hljs-attribute"> input</span>(
+                        <span class="hljs-string">'1. Sin\n2. Cos\n3. Tan\n4. Csc\n5. Sec\n6. Cot\nChoose: '</span>)
+                    <span class="hljs-keyword">if</span> trig_operation == <span class="hljs-string">"1"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">sin</span>(num)
+                    <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"2"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">cos</span>(num)
+                    <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"3"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> math.<span class="hljs-attribute">tan</span>(num)
+                    <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"4"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">sin</span>(num)
+                    <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"5"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">cos</span>(num)
+                    <span class="hljs-keyword">elif</span> trig_operation == <span class="hljs-string">"6"</span>:
+                        num =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter Your Number: '</span>))
+                        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/math.<span class="hljs-attribute">tan</span>(num)
+                <span class="hljs-keyword">except</span>:
+                    <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid Input - Trig_func Answer is undefined"</span>
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Invalid Input - Trig_func Answer is undefined"</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">graph</span>():</span>
+    <span class="hljs-string">"""A fuction that takes an equation and graphs it"""</span>
+
+    <span class="hljs-comment"># Sets x values</span>
+    x = np.<span class="hljs-attribute">arange</span>(<span class="hljs-number">-1000</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">0.01</span>)
+    <span class="hljs-comment"># 1-4 Relating to Conditionals for Graph types</span>
+    graph_type =<span class="hljs-attribute"> input</span>(
+        <span class="hljs-string">'1. Linear\n2. Quadratic\n3. Cubic\n4. Quartic\nChoose: '</span>)
+    <span class="hljs-comment"># Y/N on x-axis reflection</span>
+    negative =<span class="hljs-attribute"> input</span>(<span class="hljs-string">'Negative? y/n '</span>)
+    <span class="hljs-keyword">if</span> negative == <span class="hljs-string">'y'</span>:
+        negative = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">elif</span> negative == <span class="hljs-string">'n'</span>:
+        negative = <span class="hljs-number">1</span>
+    <span class="hljs-comment"># Invalid Input for Negative var</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">while</span> negative != <span class="hljs-string">"y"</span> <span class="hljs-keyword">or</span> negative != <span class="hljs-string">"n"</span>:
+           <span class="hljs-attribute"> print</span>(<span class="hljs-string">'Invalid Input'</span>)
+            negative =<span class="hljs-attribute"> input</span>(<span class="hljs-string">'y/n'</span>)
+            <span class="hljs-keyword">if</span> negative == <span class="hljs-string">'y'</span>:
+                negative = <span class="hljs-number">-1</span>
+            <span class="hljs-keyword">elif</span> negative == <span class="hljs-string">'n'</span>:
+                negative = <span class="hljs-number">1</span>
+    <span class="hljs-comment"># Hor/Ver Shrink/Stretch input var used in equations</span>
+    strech_shrink =<span class="hljs-attribute"> float</span>(
+       <span class="hljs-attribute"> input</span>(<span class="hljs-string">"By what int value would you like to stretch or shrink your graph: "</span>))
+    <span class="hljs-comment"># Conditionals Set for Graph Type:</span>
+    <span class="hljs-comment"># Linear</span>
+    <span class="hljs-keyword">if</span> graph_type == <span class="hljs-string">"1"</span>:
+        y_int =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">"Y-int: "</span>))
+        y = (negative*strech_shrink) * x + y_int
+        plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+        plt.<span class="hljs-attribute">show</span>()
+    <span class="hljs-comment"># Quadratic</span>
+    <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"2"</span>:
+        vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+        hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+        y = (negative*strech_shrink)*(x**<span class="hljs-number">2</span> + hor_trans) + vert_trans
+        plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+        plt.<span class="hljs-attribute">show</span>()
+    <span class="hljs-comment"># Cubic</span>
+    <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"3"</span>:
+        vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+        hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+        y = (negative*strech_shrink)*(x**<span class="hljs-number">3</span> + hor_trans) + vert_trans
+        plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+        plt.<span class="hljs-attribute">show</span>()
+    <span class="hljs-comment"># Quartic</span>
+    <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"4"</span>:
+        vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+        hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+        y = (negative*strech_shrink)*(x**<span class="hljs-number">4</span> + hor_trans) + vert_trans
+        plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+        plt.<span class="hljs-attribute">show</span>()
+    <span class="hljs-comment"># Invalid Input While loof for Graph_type</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">while</span> graph_type != <span class="hljs-string">"1"</span> <span class="hljs-keyword">or</span> graph_type != <span class="hljs-string">"2"</span> <span class="hljs-keyword">or</span> graph_type != <span class="hljs-string">"3"</span> <span class="hljs-keyword">or</span> graph_type != <span class="hljs-string">"4"</span>:
+           <span class="hljs-attribute"> print</span>(<span class="hljs-string">'Invalid Input'</span>)
+            <span class="hljs-comment"># Linear</span>
+        <span class="hljs-keyword">if</span> graph_type == <span class="hljs-string">"1"</span>:
+            y_int =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">"Y-int: "</span>))
+            y = (negative*strech_shrink) * x + y_int
+            plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+            plt.<span class="hljs-attribute">show</span>()
+        <span class="hljs-comment"># Quadratic</span>
+        <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"2"</span>:
+            vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+            hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+            y = (negative*strech_shrink)(x**<span class="hljs-number">2</span> + hor_trans) + vert_trans
+            plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+            plt.<span class="hljs-attribute">show</span>()
+        <span class="hljs-comment"># Cubic</span>
+        <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"3"</span>:
+            vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+            hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+            y = (negative*strech_shrink)(x**<span class="hljs-number">3</span> + hor_trans) + vert_trans
+            plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+            plt.<span class="hljs-attribute">show</span>()
+        <span class="hljs-comment"># Quartic</span>
+        <span class="hljs-keyword">elif</span> graph_type == <span class="hljs-string">"4"</span>:
+            vert_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your vertical transformation: '</span>))
+            hor_trans =<span class="hljs-attribute"> float</span>(input(<span class="hljs-string">'Enter your horizontal transformation: '</span>))
+            y = (negative*strech_shrink)(x**<span class="hljs-number">4</span> + hor_trans) + vert_trans
+            plt.<span class="hljs-attribute">plot</span>(x, y, color=<span class="hljs-string">'r'</span>)
+            plt.<span class="hljs-attribute">show</span>()
+
+
+<span class="hljs-comment"># Tkinter Setup:</span>
+root =<span class="hljs-attribute"> Tk</span>()
+root.<span class="hljs-attribute">title</span>(<span class="hljs-string">"Calculator App"</span>)
+root.<span class="hljs-attribute">geometry</span>(<span class="hljs-string">'388x25'</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clicked</span>(<span class="hljs-params">function</span>):</span>
+    <span class="hljs-string">"""Clicked function calls functions when buttons are pressed"""</span>
+    <span class="hljs-keyword">if</span> function == <span class="hljs-number">1</span>:
+       <span class="hljs-attribute"> print</span>(arithmetic())
+    <span class="hljs-keyword">elif</span> function == <span class="hljs-number">2</span>:
+       <span class="hljs-attribute"> print</span>(exponent())
+    <span class="hljs-keyword">elif</span> function == <span class="hljs-number">3</span>:
+       <span class="hljs-attribute"> print</span>(root_num())
+    <span class="hljs-keyword">elif</span> function == <span class="hljs-number">4</span>:
+       <span class="hljs-attribute"> print</span>(degree_radian_conversion())
+    <span class="hljs-keyword">elif</span> function == <span class="hljs-number">5</span>:
+       <span class="hljs-attribute"> print</span>(trigonometry())
+    <span class="hljs-keyword">elif</span> function == <span class="hljs-number">6</span>:
+       <span class="hljs-attribute"> graph</span>()
+
+<span class="hljs-comment">#Creates and displays buttons</span>
+arithmetic_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Arithmetic'</span>,fg=<span class="hljs-string">'red'</span>, command=partial(clicked, <span class="hljs-number">1</span>))
+arithmetic_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">2</span>, row=<span class="hljs-number">0</span>)
+exponent_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Exponent'</span>, fg=<span class="hljs-string">'red'</span>,command=partial(clicked, <span class="hljs-number">2</span>))
+exponent_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">4</span>, row=<span class="hljs-number">0</span>)
+root_num_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Root'</span>, fg=<span class="hljs-string">'red'</span>, command=partial(clicked, <span class="hljs-number">3</span>))
+root_num_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">6</span>, row=<span class="hljs-number">0</span>)
+degree_radian_conversion_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Radian Degree Conversion'</span>, fg=<span class="hljs-string">'red'</span>, command=partial(clicked, <span class="hljs-number">4</span>))
+degree_radian_conversion_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">8</span>, row=<span class="hljs-number">0</span>)
+trigonometry_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Trig'</span>, fg=<span class="hljs-string">'red'</span>,command=partial(clicked, <span class="hljs-number">5</span>))
+trigonometry_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">10</span>, row=<span class="hljs-number">0</span>)
+graph_btn =<span class="hljs-attribute"> Button</span>(root, text=<span class="hljs-string">'Graph'</span>, fg=<span class="hljs-string">'red'</span>, command=partial(clicked, <span class="hljs-number">6</span>))
+graph_btn.<span class="hljs-attribute">grid</span>(column=<span class="hljs-number">12</span>, row=<span class="hljs-number">0</span>)
+
+<span class="hljs-string">"""Chat GPT Assisted Function:"""</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_closing</span>():</span>
+    <span class="hljs-string">"""Function closes application/window when yes is button is clicked"""</span>
+    <span class="hljs-keyword">if</span> messagebox.<span class="hljs-attribute">askyesno</span>(<span class="hljs-string">"Exit"</span>, <span class="hljs-string">"Do you wish to continue"</span>):
+        root.<span class="hljs-attribute">destroy</span>()
+<span class="hljs-comment">#Binds function on_closing</span>
+root.<span class="hljs-attribute">protocol</span>(<span class="hljs-string">"WM_DELETE_WINDOW"</span>, on_closing)
+
+
+
+<span class="hljs-comment">#Runs and updates visuals of an application</span>
+root.<span class="hljs-attribute">mainloop</span>()</code></pre>

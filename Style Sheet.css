@@ -93,7 +93,14 @@ body {
     border-radius: 5%;
     border-color: black;
 }
-
+#Contact-form{
+    padding: 20px;
+}
+#Contact-form input {
+    height: 30px;
+    width: fit-content;
+    text-align: center;
+}
 /* Page Specific - Resume.html */
 
 #resume {
